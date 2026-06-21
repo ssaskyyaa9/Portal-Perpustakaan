@@ -35,7 +35,7 @@ export default function Pengajuan() {
   }
 
   async function handleSelesai(id) {
-    await kembalikanPeminjaman(id); // stok + 1
+    await kembalikanPeminjaman(id);
     refreshPage();
   }
 
@@ -48,7 +48,6 @@ export default function Pengajuan() {
       <SidebarAdminPetugas />
       <div className="p-8 ml-[245px] w-full">
         <h1 className="text-2xl font-bold mb-6">Pengajuan Peminjaman</h1>
-
         <table className="w-full border">
           <thead className="bg-[#0f1a44] text-white">
             <tr>

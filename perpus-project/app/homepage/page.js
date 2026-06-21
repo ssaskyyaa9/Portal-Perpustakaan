@@ -32,8 +32,8 @@ export default function Homepage() {
 
   useEffect(() => {
     async function loadBooks() {
-      const result = await getBooks();  // <- ambil data array dari SQL
-      setBooks(result || []);           // <- antisipasi kalau null
+      const result = await getBooks();
+      setBooks(result || []); 
     }
     loadBooks();
   }, []);
@@ -63,16 +63,7 @@ export default function Homepage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {books.map((b) => (
-            <BookCard
-              key={b.id}
-              id={b.id}
-              judul={b.judul}
-              penulis={b.penulis}
-              kategori={b.kategori}
-              stok={b.stok}
-              cover_url={b.cover_url}
-              detail={b.detail}
-            />
+            <BookCard key={b.id} id={b.id} judul={b.judul} penulis={b.penulis} kategori={b.kategori} stok={b.stok} cover_url={b.cover_url} detail={b.detail} />
           ))}
         </div>
       </div>

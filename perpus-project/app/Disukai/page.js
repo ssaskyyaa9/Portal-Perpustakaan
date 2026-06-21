@@ -23,15 +23,7 @@ export default async function Disukai() {
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {books.map(b => (
-            <BookCard
-              key={b.id}
-              id={b.id}
-              judul={b.judul}
-              penulis={b.penulis}
-              kategori={b.kategori}
-              stok={b.stok}
-              cover_url={b.cover_url}
-            />
+            <BookCard key={b.id} id={b.id} judul={b.judul} penulis={b.penulis} kategori={b.kategori} stok={b.stok} cover_url={b.cover_url} />
           ))}
         </div>
       </div>

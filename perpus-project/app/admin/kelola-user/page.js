@@ -158,8 +158,7 @@ export default function KelolaUserPage() {
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
               />
 
-              <select
-                className="border p-2 w-full mb-4"
+              <select className="border p-2 w-full mb-4"
                 value={form.role}
                 onChange={(e) => setForm({ ...form, role: e.target.value })}
               >
@@ -175,7 +174,6 @@ export default function KelolaUserPage() {
           </div>
         )}
 
-        {/* POPUP EDIT USER */}
         {showEditModal && (
           <div className="fixed inset-0 flex justify-center items-center z-50 bg-black/40">
             <form onSubmit={saveEdit} className="bg-white p-6 rounded shadow-xl w-[380px]">

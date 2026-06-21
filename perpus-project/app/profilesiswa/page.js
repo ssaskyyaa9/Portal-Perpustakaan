@@ -122,9 +122,7 @@ export default function ProfileSiswa() {
             <tbody className="bg-white text-center">
               {riwayat.length === 0 && (
                 <tr>
-                  <td colSpan="7" className="text-center py-3 text-gray-500">
-                    Belum ada riwayat peminjaman
-                  </td>
+                  <td colSpan="7" className="text-center py-3 text-gray-500"> Belum ada riwayat peminjaman </td>
                 </tr>
               )}
 

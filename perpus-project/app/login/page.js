@@ -15,7 +15,6 @@ export default function LoginPage() {
   const router = useRouter();
   const [statusMessage, setStatusMessage] = useState("");
 
-  // AUTO-CHECK & AUTO-LOGIN
   useEffect(() => {
     let isProcessing = false;
 

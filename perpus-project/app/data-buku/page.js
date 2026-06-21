@@ -57,9 +57,7 @@ export default function DataBuku() {
                       <img src="/sidebar-dash/edit.png" alt="Edit" className="w-5 h-5 hover:opacity-70"/>
                     </button>
 
-                    <button onClick={async () => {
-                      await deleteBook(b.id);
-                      load(); }}>
+                    <button onClick={async () => { await deleteBook(b.id); load(); }}>
                       <img src="/hapus.png" alt="Delete"className="w-5 h-5 hover:opacity-70"/>
                     </button>
                   </td>

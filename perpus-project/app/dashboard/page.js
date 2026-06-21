@@ -9,12 +9,10 @@ export default function Dashboard() {
   const [role, setRole] = useState("");
   const [stats, setStats] = useState({ box1: 0, box2: 0, box3: 0 });
 
-  // data peminjaman
   const [list, setList] = useState([]);
   const [search, setSearch] = useState("");
   const [tanggal, setTanggal] = useState("");
 
-  // format tanggal agar rapi
   function formatDate(val) {
     if (!val) return "-";
     try {
@@ -38,7 +36,6 @@ export default function Dashboard() {
         setStats(s);
       }
 
-      // ambil data peminjaman
       const pinjam = await getPeminjaman();
       setList(pinjam);
     }
@@ -46,7 +43,6 @@ export default function Dashboard() {
     loadSession();
   }, []);
 
-  // filter + search
   const filteredList = list.filter((item) => {
     const matchSearch =
       item.username.toLowerCase().includes(search.toLowerCase()) ||
@@ -64,14 +60,11 @@ export default function Dashboard() {
       <SidebarAdminPetugas/>
 
       <div className="ml-[245px] p-8 bg-gray-50">
-        
-        {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold"> Selamat Datang, {username} 👋 </h1>
           <div className="text-sm text-gray-600"> Anda masuk sebagai <span className="font-bold">{role}</span> </div>
         </div>
 
-        {/* 3 Kotak Statistik */}
         <div className="grid grid-cols-3 gap-6 mb-10">
           <div className="bg-pink-300 p-6 rounded-xl text-center">
             <h2 className="text-2xl font-bold">{stats.box1}</h2>
@@ -89,25 +82,11 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Search & Filter */}
         <div className="flex gap-3 mb-4">
-          <input
-            type="text"
-            placeholder="Cari nama / judul buku..."
-            className="border px-3 py-2 rounded w-72"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-
-          <input
-            type="date"
-            className="border px-3 py-2 rounded"
-            value={tanggal}
-            onChange={(e) => setTanggal(e.target.value)}
-          />
+          <input type="text" placeholder="Cari nama / judul buku..." className="border px-3 py-2 rounded w-72" value={search} onChange={(e) => setSearch(e.target.value)} />
+          <input type="date" className="border px-3 py-2 rounded" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
         </div>
 
-        {/* Tabel Peminjaman */}
         <table className="w-full border">
           <thead className="bg-[#0f1a44] text-white">
             <tr>
